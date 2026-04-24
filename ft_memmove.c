@@ -6,11 +6,11 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 16:18:03 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/23 16:38:11 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:19:42 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

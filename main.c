@@ -6,14 +6,13 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:48:31 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/23 18:25:21 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:55:09 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-// protótipos das suas funções (sem ft_)
 int     ft_isalpha(int c);
 int     ft_isdigit(int c);
 int     ft_isalnum(int c);
@@ -30,15 +29,15 @@ int     ft_toupper(int c);
 int     ft_tolower(int c);
 char    *ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
-// int     ft_strncmp(const char *s1, const char *s2, size_t n);
-// void    *ft_memchr(const void *s, int c, size_t n);
-// int     ft_memcmp(const void *s1, const void *s2, size_t n);
-// char    *ft_strnstr(const char *haystack, const char *needle, size_t len);
-// int     ft_atoi(const char *str);
+int     ft_strncmp(const char *s1, const char *s2, size_t n);
+void    *ft_memchr(const void *s, int c, size_t n);
+int     ft_memcmp(const void *s1, const void *s2, size_t n);
+char    *ft_strnstr(const char *haystack, const char *needle, size_t len);
+int     ft_atoi(const char *str);
 
 int main(void)
 {
-    printf("=== TESTES ===\n\n");
+    printf("===== TESTES =====\n\n");
 
     // ft_isalpha, ft_isdigit, ft_isalnum
     printf("ft_isalpha('A'): %d\n", ft_isalpha('A'));
@@ -85,28 +84,28 @@ int main(void)
 
     // ft_toupper / ft_tolower
     printf("ft_toupper('a'): %c\n", ft_toupper('a'));
-    printf("ft_tolower('A'): %c\n\n", ft_tolower('A'));
+    printf("ft_tolower('A'): %c\n", ft_tolower('A'));
 
     // ft_strchr / ft_strrchr
     char *s = "banana";
     printf("ft_strchr: %s\n", ft_strchr(s, 'a'));
-    printf("ft_strrchr: %s\n\n", ft_strrchr(s, 'a'));
+    printf("ft_strrchr: %s\n", ft_strrchr(s, 'a'));
 
-    // // ft_strncmp
-    // printf("ft_strncmp: %d\n\n", ft_strncmp("abc", "abd", 3));
+    // ft_strncmp
+    printf("ft_strncmp: %d\n", ft_strncmp("abc", "abd", 3));
 
-    // // ft_memchr
-    // char mem[] = "hello";
-    // printf("ft_memchr: %s\n\n", (char *)ft_memchr(mem, 'l', 5));
+    // ft_memchr
+    char mem[] = "hello";
+    printf("ft_memchr: %s\n", (char *)ft_memchr(mem, 'l', 15));
 
-    // // ft_memcmp
-    // printf("ft_memcmp: %d\n\n", ft_memcmp("abc", "abc", 3));
+    // ft_memcmp
+    printf("ft_memcmp: %d\n", ft_memcmp("abc", "abcd", 3));
 
-    // // ft_strnstr
-    // printf("ft_strnstr: %s\n\n", ft_strnstr("hello world", "world", 11));
+    // ft_strnstr
+    printf("ft_strnstr: %s\n\n", ft_strnstr("hello world abc", "world", 11));
 
-    // // ft_atoi
-    // printf("ft_atoi(\"123\"): %d\n", ft_atoi("123"));
+    // ft_atoi
+    printf("ft_atoi(\"123\"): %d\n", ft_atoi("123"));
 
     return 0;
 }

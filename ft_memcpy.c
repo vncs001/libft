@@ -6,11 +6,11 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 16:01:34 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/23 16:20:31 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:19:42 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

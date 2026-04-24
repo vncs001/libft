@@ -6,11 +6,11 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:38:27 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/23 15:57:14 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:19:43 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 void	ft_bzero(void *s, size_t n)
 {

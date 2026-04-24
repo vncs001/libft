@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 11:37:17 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/24 11:19:40 by vaugusto         ###   ########.fr       */
+/*   Created: 2026/04/24 11:55:35 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/04/24 11:56:33 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	*ft_memset(void *str, int c, size_t n)
+int	ft_atoi(char *str)
 {
-	size_t			i;
-	unsigned char	*arr;
+	int	i;
+	int	result;
+	int	sign;
 
 	i = 0;
-	arr = (unsigned char *)str;
-	while (i < n)
-		arr[i++] = (unsigned char)c;
-	return (str);
+	result = 0;
+	sign = 1;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
-
-// #include <stdio.h>
-// int main() {
-//    char str[50];
-//    ft_memset(str, '.', 9);
-//    str[49] = '\0';
-//    printf("%s\n", str);
-//    return 0;
-// }

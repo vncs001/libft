@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 11:37:17 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/24 11:19:40 by vaugusto         ###   ########.fr       */
+/*   Created: 2026/04/24 11:18:21 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/04/24 11:34:31 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memset(void *str, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*arr;
+	unsigned int	i;
 
 	i = 0;
-	arr = (unsigned char *)str;
-	while (i < n)
-		arr[i++] = (unsigned char)c;
-	return (str);
+	if (n < 1)
+		return (0);
+	while ((i < n - 1) && s1[i] != '\0' && s2[i] != '\0' && s2[i] == s1[i])
+		i++;
+	if (s1[i] == s2[i])
+		return (0);
+	return (s1[i] - s2[i]);
 }
-
-// #include <stdio.h>
-// int main() {
-//    char str[50];
-//    ft_memset(str, '.', 9);
-//    str[49] = '\0';
-//    printf("%s\n", str);
-//    return 0;
-// }
