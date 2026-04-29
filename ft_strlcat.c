@@ -6,15 +6,17 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 16:49:38 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/23 17:38:09 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:51:09 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	i2;
-	unsigned int	tam;
+	size_t	i;
+	size_t	i2;
+	size_t	tam;
 
 	i = 0;
 	i2 = 0;

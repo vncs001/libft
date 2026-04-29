@@ -6,9 +6,11 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 18:04:57 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/23 18:08:12 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:33:44 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/23 16:18:03 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/29 09:37:49 by vaugusto         ###   ########.fr       */
+/*   Created: 2026/04/29 08:59:14 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/04/29 10:45:24 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
+//					psum dolor, 				7,			 10
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*arr_dest;
-	unsigned char	*arr_src;
+	size_t	i;
+	size_t	s_len;
+	char	*sub;
 
-	if (!dest && !src)
+	if (!s)
 		return (NULL);
-	arr_dest = (unsigned char *)dest;
-	arr_src = (unsigned char *)src;
-	if (arr_dest > arr_src)
-	{
-		while (n > 0)
-		{
-			n--;
-			arr_dest[n] = arr_src[n];
-		}
-		return (dest);
-	}
+	s_len = ft_strlen(s);
+	if (start >= s_len || !s || len == 0)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
+	sub = (char *)malloc((len + 1) * sizeof(char));
+	if (!sub)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < len && s[start] != '\0')
 	{
-		arr_dest[i] = arr_src[i];
+		sub[i] = s[start + i];
 		i++;
 	}
-	return (dest);
+	sub[i] = '\0';
+	return (sub);
 }

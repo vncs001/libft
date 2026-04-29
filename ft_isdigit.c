@@ -6,9 +6,11 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 10:46:04 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/22 10:54:22 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:32:39 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int d)
 {

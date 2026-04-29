@@ -6,11 +6,12 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 11:37:17 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/24 11:19:40 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:33:07 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *str, int c, size_t n)
 {

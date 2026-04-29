@@ -6,11 +6,13 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 11:26:50 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/22 11:27:52 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:39:48 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

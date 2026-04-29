@@ -6,9 +6,11 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 18:21:49 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/24 11:33:43 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:33:41 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

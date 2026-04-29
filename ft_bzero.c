@@ -6,11 +6,12 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:38:27 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/24 11:19:43 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:34:39 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

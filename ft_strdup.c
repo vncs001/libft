@@ -1,29 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 11:18:38 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/28 17:32:42 by vaugusto         ###   ########.fr       */
+/*   Created: 2026/04/28 12:02:52 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/04/29 08:42:44 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+#include <stdlib.h>
 #include "libft.h"
 
-int	ft_isprint(int p)
+char	*ft_strdup(const char *s)
 {
-	if (p >= 32 && p <= 126)
-		return (1);
-	return (0);
+	char	*str;
+	int		i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	str = malloc(i + 1 * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
 // #include <stdio.h>
-// int	main()
+// int main()
 // {
-// 	printf("%d\n", ft_isprint(31));
-// 	printf("%d\n", ft_isprint(127));
-// 	printf("%d\n", ft_isprint(56));
-// 	printf("%d\n", ft_isprint(84));
+// 	printf("%s", ft_strdup("strs dsade dase"));
 // }
