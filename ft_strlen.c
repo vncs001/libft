@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 11:26:50 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/28 17:39:48 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/05/03 21:59:34 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ size_t	ft_strlen(const char *str)
 
 // #include <stdio.h>
 // int	main(){
-// 	printf("%d", ft_strlen("vini"));
+// 	printf("%zu", ft_strlen(""));
+// 	printf("%zu", ft_strlen("abc"));
 // }

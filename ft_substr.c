@@ -6,13 +6,13 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 08:59:14 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/29 10:45:24 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/05/04 16:43:12 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
-//					psum dolor, 				7,			 10
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;

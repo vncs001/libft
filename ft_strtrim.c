@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 10:47:08 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/05/01 11:25:20 by vaugusto         ###   ########.fr       */
+/*   Created: 2026/05/03 21:27:39 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/05/04 17:22:38 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
-	char	*str;
+	size_t	i;
+	size_t	i2;
+	size_t	tam;
 
-	if (!s1 || !s2)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = malloc((len + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s1, len + 1);
-	ft_strlcat(str, s2, len + 1);
-	return (str);
+	i = 0;
+	i2 = 0;
+	while (set[i2++])
+	{
+		if (s1[i] == set[i2])
+		{
+			i++;
+			break ;
+		}
+	}
+	tam = ft_strlen((const char)*s1[i]);
+	while (i2-- > 0)
+	{
+		if (s1[tam - 1] == set[i2])
+		{
+			tam--;
+			break ;
+		}
+	}
+	return (ft_substr(s1, (unsigned int)i, (unsigned int)tam));
 }
