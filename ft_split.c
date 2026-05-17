@@ -6,90 +6,73 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 15:58:06 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/05/06 20:20:24 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/05/17 22:47:07 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-size_t	ft_wordconter(char const *s, char c)
+static size_t	ft_wordconter(char const *s, char c)
 {
-	size_t	i;
-	size_t	i2;
+	size_t	count;
+	int		is_word;
 
-	i = 0;
-	i2 = 0;
-	while (s[i])
+	count = 0;
+	is_word = 0;
+	while (*s)
 	{
-		if (s[i] == c && s[i + 1] != c)
-			i2++;
-		i++;
+		if (*s != c && !is_word)
+		{
+			is_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			is_word = 0;
+		s++;
 	}
-	return (i2 + 1);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**arr_final;
+	char	**res;
+	char	*word_start;
 	size_t	i;
-	size_t	i2;
-	size_t	checkpoint;
 
-	arr_final = (char **)malloc(sizeof(char **) * (ft_wordconter(s, c) + 1));
-	if (!arr_final)
+	if (!s)
 		return (NULL);
-	i = -1;
-	i2 = 0;
-	checkpoint = 0;
-	while (s[++i])
+	res = (char **)malloc((ft_wordconter(s, c) + 1) * sizeof(char *));
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (*s)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] == '\0')
+		while (*s == c)
+			s++;
+		if (*s == '\0')
 			break ;
-		checkpoint = i;
-		while (s[i] != c)
-			i++;
-		arr_final[i2] = (char *)malloc(i - checkpoint + 1);
-		if (!arr_final[i2])
-			return (NULL);
-		arr_final[i2++] = (char *)ft_substr(s, checkpoint, i - checkpoint);
+		word_start = (char *)s;
+		while (*s && *s != c)
+			s++;
+		res[i++] = ft_substr(word_start, 0, s - word_start);
 	}
-	arr_final[i2] = NULL;
-	return (arr_final);
+	res[i] = NULL;
+	return (res);
 }
 
 // #include <stdio.h>
-
 // int	main()
 // {
-// 	char	**qualquer = ft_split("ola,como,voce,esta", ',');
-// 	int	i = 0;
-// 	while (qualquer[i])
-// 	{
-// 		printf("%s\n", qualquer[i]);
+	// 	char	**qualquer = ft_split("ola,como,voce,esta", ',');
+	// 	int	i = 0;
+	// 	while (qualquer[i])
+	// 	{
+		// 		printf("%s\n", qualquer[i]);
+// 		free(qualquer[i]);
 // 		i++;
 // 	}
+// 	free(qualquer);
 // }
 // s = "ola,como,voce,esta";
 // c = ',';
-//--------------------------
-// size_t	i;
-// size_t	i2;
-// size_t	checkpoint;
-// char	**arr_final;
-
-// i = 0;
-// i2 = 0;
-// checkpoint = i;
-// while (s[i])
-// {
-// 	if (s[i] == c)
-// 	{
-// 		arr_final[i2] = ft_substr(s, checkpoint, i);
-// 		checkpoint = i;
-// 	}
-// 	i++;
-// }
-// return (arr_final);

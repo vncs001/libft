@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 11:55:35 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/05/15 09:51:22 by vaugusto         ###   ########.fr       */
+/*   Created: 2026/05/17 12:30:49 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/05/17 21:27:31 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	int	i;
-	int	result;
-	int	sign;
+	t_list	*temp;
+	t_list	*temp2;
 
-	i = 0;
-	result = 0;
-	sign = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	temp = *lst;
+	while (temp != NULL)
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		temp2 = temp->next;
+		ft_lstdelone(temp, del);
+		temp = temp2;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	*lst = NULL;
 }
