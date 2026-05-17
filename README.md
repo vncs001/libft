@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by <vaugusto>.*
+*This project has been created as part of the 42 curriculum by vaugusto.*
 
 # Libft
 
@@ -173,6 +173,6 @@ All code implementation, debugging, testing, and final decisions were completed 
 
 # Author
 
-<vaugusto>
+vaugusto
 
 Project developed at 42 School.

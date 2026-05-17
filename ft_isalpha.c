@@ -6,15 +6,15 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 10:31:13 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/28 17:32:31 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/05/18 00:00:27 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int a)
+int	ft_isalpha(int c)
 {
-	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
 	return (0);
 }

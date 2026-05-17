@@ -6,15 +6,15 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 10:46:04 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/28 17:32:39 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/05/18 00:00:55 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int d)
+int	ft_isdigit(int c)
 {
-	if (d >= 48 && d <= 57)
+	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }

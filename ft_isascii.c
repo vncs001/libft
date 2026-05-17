@@ -6,15 +6,15 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 11:09:50 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/04/28 17:32:35 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/05/18 00:02:02 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int a)
+int	ft_isascii(int c)
 {
-	if (a >= 0 && a <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }
