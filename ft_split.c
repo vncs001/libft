@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 15:58:06 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/05/17 22:47:07 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/05/18 16:56:36 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,20 @@ static size_t	ft_wordconter(char const *s, char c)
 	return (count);
 }
 
+static void	*ft_cleaner(char **arr)
+{
+	size_t	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
@@ -55,7 +69,9 @@ char	**ft_split(char const *s, char c)
 		word_start = (char *)s;
 		while (*s && *s != c)
 			s++;
-		res[i++] = ft_substr(word_start, 0, s - word_start);
+		res[i] = ft_substr(word_start, 0, s - word_start);
+		if (!res[i++])
+			return (ft_cleaner(res));
 	}
 	res[i] = NULL;
 	return (res);
@@ -74,5 +90,3 @@ char	**ft_split(char const *s, char c)
 // 	}
 // 	free(qualquer);
 // }
-// s = "ola,como,voce,esta";
-// c = ',';

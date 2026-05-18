@@ -151,6 +151,8 @@ gcc main.c libft.a
 
 ---
 
+## Resources
+
 # Technical Notes
 
 - Global variables are not used.
